@@ -30,7 +30,7 @@ class PostController extends Controller
         // $posts = DB::select('SELECT * FROM posts');
         // $posts = Post::orderBy('title', 'desc')->get();
         // $posts = Post::orderBy('title', 'desc')->take(1)->get();
-        
+
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
         return view('posts.index')->with('posts', $posts);
 
@@ -43,7 +43,7 @@ class PostController extends Controller
      */
     public function create()
     {
-       
+
         return view('posts.create');
     }
 
@@ -66,7 +66,7 @@ class PostController extends Controller
         {
             //Get filename with extension
             $filenameWithExt = $request->file('cover-image')->getClientOriginalName();
-            //Get just filename 
+            //Get just filename
                 $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             //Get just ext
                 $extension = $request->file('cover-image')->getClientOriginalExtension();

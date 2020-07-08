@@ -25,13 +25,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @include('inc.navbar')
-        @include('inc.messages')
-        <br>
-        <section class="container">
-            @yield('content')
-        </section>
-    </div>
+<div id="app">
+    @include('inc.navbar')
+    @include('inc.messages')
+    <br>
+    <section class="welcome">
+        @yield('content')
+    </section>
+</div>
 </body>
 </html>
+

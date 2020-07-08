@@ -13,17 +13,20 @@
                         </div>
                     @endif
                         <a href="/posts/create" class="btn btn-primary">Create Post</a>
-                        <h3>Your Blog Post in Here</h3>
+                        <br><h3>Your Blog Post </h3>
                         @if(count($post) > 0)
                             <table class="table table-striped">
                                 <tr>
                                     <th>Title</th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>Author</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
                                 </tr>
                                 @foreach($post as $post)
                                 <tr>
                                     <td>{{$post->title}}</td>
+                                    <td>{{$post->user->name}}</td>
+                                    <td>{{$post->user->created_at}}</td>
                                     <td><a href="/posts/{{$post->id}}/edit" class="btn btn-default pull-left">Edit</a></td>
                                     <td>
                                         {!! Form::open(['action' => ['PostController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right' ]) !!}
@@ -33,7 +36,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                            </table>     
+                            </table>
                         @else
                             <p>You have no Post</p>
                         @endif
