@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="color: grey">Posts</h1>
+    <h1 class="color: grey">Blogs</h1>
     <hr>
 
     @if (count($posts) > 0)
@@ -21,5 +21,5 @@
            {{$posts->links()}}
     @else
         <p>No Post Found</p>
-    @endif 
+    @endif
 @endsection

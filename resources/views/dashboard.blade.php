@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-14">
             <div class="card">
                 <div class="card-header">Dashboard</div>
                     <div class="card-body">
@@ -18,6 +18,7 @@
                             <table class="table table-striped">
                                 <tr>
                                     <th>Title</th>
+                                    <th>Content</th>
                                     <th>Author</th>
                                     <th>Date</th>
                                     <th>Actions</th>
@@ -25,6 +26,7 @@
                                 @foreach($post as $post)
                                 <tr>
                                     <td>{{$post->title}}</td>
+                                    <td>{{$post->body}}</td>
                                     <td>{{$post->user->name}}</td>
                                     <td>{{$post->user->created_at}}</td>
                                     <td><a href="/posts/{{$post->id}}/edit" class="btn btn-default pull-left">Edit</a></td>
